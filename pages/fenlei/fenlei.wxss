@@ -1,0 +1,268 @@
+
+.container{
+  display: block;
+  position:relative;
+  margin-top:-25%;
+   background-color:  	#90c0bd;
+   height:117%;
+   padding:240rpx 0;
+
+
+}
+page {
+  background-color: #F8F8F8;
+  height: 100%;
+  font-size: 32rpx;
+  line-height: 1.6;
+}
+.page-body{
+  padding-top: 15rpx;
+}
+.page-section{
+  width: 100%;
+}
+.page-section_center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page-section:last-child{
+  margin-bottom: 0;
+}
+.main{
+  /* background:pink; */
+  width: 100%;
+  height: 100%;
+}
+.demo-text-1{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(241, 213, 236, 0.322);
+  color: #FFFFFF;
+  font-size: 36rpx;
+}
+.demo-text-1:before{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.demo-text-2{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(39, 130, 215, 0.301);
+  color: #FFFFFF;
+  font-size: 36rpx;
+}
+.demo-text-2:before{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.demo-text-3{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(252, 227, 227);
+  color: #353535;
+  font-size: 36rpx;
+}
+.demo-text-3:before{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.demo-text-4{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(122, 203, 206, 0.726);
+  color: #FFFFFF;
+  font-size: 36rpx;
+}
+.demo-text-4:before{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.demo-text-5{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(216, 185, 200, 0.444);
+  color: #FFFFFF;
+  font-size: 36rpx;
+}
+.demo-text-5:before{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+swiper {
+display:block;
+height:1030rpx;
+}
+.swiper-item{
+  display: block;
+  height: 940rpx;
+  /* border: 1px solid rgb(211, 207, 207);
+  border-radius: 50rpx; */
+  /* box-shadow:0px 5px 10px 0px gray; */
+}
+ .card_info {
+  position: absolute;
+  height: 458rpx;
+  width: 87%;
+  border-bottom: 1.5px rgba(199, 198, 198, 0.7) solid;
+  margin-top: 115rpx;
+  margin-left: 47rpx;
+  
+}
+.card_info_mes_title{
+  margin-left: -25rpx;
+}
+.top-right{
+  width:50%;
+
+  float: left;
+  margin-left:47%;
+  margin-top:-63%;
+}
+.top-right-top{
+  width:100%;
+  height:70%;
+}
+image{
+  width: 100%;
+  height: 100%;
+}
+.one{
+  float: left;
+  width:100%;
+  height: 40rpx;
+}
+.one h5{
+  font-size:35rpx;
+  color: black;
+  float: left;
+}
+.two{
+  float: left;
+  width:100%;
+  height: 40rpx;
+  margin-top:20rpx;
+}
+.two p{
+  font-size: 30rpx;
+  float: left;
+  color: #999;
+}
+.three{
+  float: left;
+  width:100%;
+  height: 261rpx;
+  margin-top:20rpx;
+  overflow: hidden;
+
+}
+.three span{
+  font-size:28rpx;
+  float:left;
+  color: #999;
+}
+.four{
+  float: left;
+  width:100%;
+  height: 40rpx;
+  margin-top:20rpx;
+}
+.a1{
+  font-size:23rpx;
+  float:left;
+  color:#999;
+}
+.a2{
+  font-size:23rpx;
+  float:left;
+  color:#999;
+  margin-left:8%;
+}
+.a3{
+  font-size:23rpx;
+  float:left;
+  color:#999;
+  margin-left:8%;
+}
+/* .box0{
+  height: 1340rpx;
+   background-color: pink;
+} */
+.box1{
+  margin-left: 10rpx;
+  margin-top: 0rpx;
+  height: 940rpx;
+  background-color: #d7e6e5;
+  border: 1px solid rgb(211, 207, 207);
+  border-radius: 50rpx;
+  box-shadow:0px 5px 10px 0px gray;
+}
+.bottom{
+  position: fixed;
+  
+  left:30rpx;
+  width: 700rpx;
+}
+.chakan{
+  background-color: rgba(136, 132, 139,0.3);
+  height: 70rpx;
+  width: 200rpx;
+  border-radius: 36rpx;
+  float: left;
+}
+.chakan-text{
+  float: left;
+  margin-left: 58rpx;
+  margin-top: -58rpx;
+  font-size: 30rpx;
+}
+.xin{
+  float: left;
+  margin-left: 274rpx;
+  margin-top:1rpx;
+  
+}
+.share{
+  float: left;
+  margin-left:372rpx;
+  margin-top:-70rpx;
+}
+.text{
+  float: left;
+  margin-top: 640rpx;
+  margin-left: 48rpx;
+  width: 616rpx;
+}
+.content3{
+  color:rgba(0, 0, 0, 0.871);
+}
+.content4{
+  display: block;
+  float: right;
+  margin-right: 2rpx;
+  margin-top: 10rpx;
+  color:rgba(0, 0, 0, 0.871);
+
+}
+
+.share1{
+  float: left;
+  background-color:  	#90c0bd;
+ 
+}
+button::after{ border: none; }

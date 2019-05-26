@@ -1,0 +1,10 @@
+<view class="searchbar">
+<navigator wx:if="{{isnavigator}}" url="/pages/search/search" class="search-navigator">
+     <!-- <input class="searchInput" placeholder="请输入搜索的书籍" type="text"/> -->
+     <image src='https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/搜索.png' class='photo1'></image>
+</navigator>
+<view class="search-input-group" wx:else>
+<input class="search-input" placeholder='请输入搜索的书籍' bindinput = 'onInputEvent'></input>
+ <image src='https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/搜索.png' class='photo2'></image>
+</view>
+</view>

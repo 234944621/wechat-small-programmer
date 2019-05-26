@@ -1,0 +1,73 @@
+<!--logs.wxml-->
+<view class='container' hidden="{{iscart}}">
+      <!-- 上部分  -->
+      <view class='section section-good'>
+        <checkbox-group bindchange="checkboxChange">
+          <view class='good' wx:for='{{goodList}}' wx:for-item="good" wx:key="good.name">             
+            <!--第一个盒子  -->
+              <view class='good_title'>
+                <view class='shangjia'>时光书店</view>
+                <view class='shanchu'>
+                  <view class='shanchu_trash' bindtap="deleteList" id='{{good._id}}'><image src='https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/垃圾箱.png'></image></view>
+                <!-- 删除 -->
+                </view>
+              </view>
+              <!-- 第二个盒子 -->
+              <view class='good_content' bindtap='jumpPage15'>
+                  <view class='good_checkbox'>
+                    <label class="checkbox">
+                      <checkbox value="{{good._id}}" checked="{{good.checked}}" hidden='hidden' />
+                      <icon type="circle" size="23" wx:if="{{!good.checked}}" class='icon'></icon>
+                      <icon type="success" size="23" wx:if="{{good.checked}}" class='icon'></icon>
+                    </label>
+                  </view>
+                    <view class='good_img'>
+                      <image class='cover' src='{{good.img}}'></image>
+                    </view>
+                    <view class='content'>
+                      <view class='titles'>{{good.bname}}</view>
+                    </view>
+                    <view class='good_footer'>
+                      <view class='price'>¥{{good.price}}</view>
+                      <view class='stepper'>
+                        <view class='subtract {{good.number == 1 ? "disabled": ""}}' data-index='{{index}}' catchtap='subtracttap'>-</view>
+                        <input class='count' type='number' value='{{good.number}}'></input>
+                        <view class='add' data-index="{{index}}" catchtap='addtap'>+</view>
+                      </view> 
+                    </view>
+              </view>
+          </view>
+        </checkbox-group>
+      </view>
+
+      <!-- 底部  -->
+      <view class='section-bottom'>
+        <checkbox-group bindchange="selectalltap">
+          <label class='checkbox-allcheck'>
+            <checkbox value="{{!checkAll}}" checked="{{checkAll}}" hidden='hidden' />
+            <icon type="circle" size="23" wx:if="{{!checkAll}}"></icon>
+            <icon type="success" size="23" wx:if="{{checkAll}}"></icon>
+            <text class='check-all-text'>全选</text>
+          </label>
+        </checkbox-group>
+        <view class="total">
+          <view class='totalCount'>已选择
+            <text>{{totalCount}}</text>件商品
+          </view>
+          <view class='totalPrice'>总价：
+            <text>¥{{totalPrice}}</text>
+          </view>
+        </view>
+        <view>
+          <view class='btn {{totalCount > 0 ? "btn-primary" : "btn-default"}}'  bindtap='jumpPage111'>去结算</view>
+        </view>
+      </view>
+
+</view>
+
+<!--如果购物车内没有数据，就显示没有数据-->  
+<view class="cartList" hidden="{{!iscart}}">  
+    <image src="data:image/png;base64,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"/>  
+    <view>购物车什么都没有，赶快去购物吧~٩(๑❛ᴗ❛๑)۶~</view>  
+    <view class='null-small' type='primary' bindtap='jumpPage'><p>再去逛逛</p></view>
+</view>

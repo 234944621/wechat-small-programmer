@@ -1,0 +1,108 @@
+<view class="page">
+    <view class="page-bottom">
+        <view class="page-content">
+            <view  class="wc1">
+                <text>书籍分类</text>
+            </view>
+            <view  class="wc" bindtap='jumpPage1'>
+                <text> I  T  科技</text>
+            </view>
+            <view  class="wc" bindtap='jumpPage2'>
+                <text>青春励志</text>
+            </view>
+            <view  class="wc" bindtap='jumpPage3'>
+                <text>考研教育</text>
+            </view>
+            <view  class="wc" bindtap='jumpPage4'>
+                <text>职场精进</text>
+            </view>
+        </view>
+    </view>
+    
+    <view  class="page-top" bindtouchstart="tap_start"   style="{{translate}}"> 
+     <scroll-view  scroll-y style="height:100%;" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+    <!-- <view class="form">
+      <searchbar isnavigator="{{true}}"></searchbar>
+    </view> -->
+    <image bindtap="tap_ch"  src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/列表(1).png" class="image1"></image>
+        <view class="search"> 
+            <input class="search-input" placeholder="请输入你想要搜索的书籍" bindtap="bindFocus" auto-focus >
+                <!-- <icon type="search" size="20" color="purple" class="search-icon inside"/> -->
+                <image src='https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/搜索.png' class='photo'></image>
+            </input>
+        </view>
+       <view class='box1'>
+        <view class='box1a'  bindtap='jumpPage'>
+        <image src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/%E5%8F%8D%E9%A6%88%E8%83%8C%E6%99%AF11.jpg" style='width: 350rpx;height: 210rpx;float:left;'></image>
+        <view class="box1a1" style='float:left; margin-top:-150rpx; margin-left:38rpx; '>告诉我们你想看的<span style=" display:block;margin-top:6rpx;margin-left:104rpx;">书籍</span></view></view>
+        <view class='box1b'>
+        <image src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/%E5%8F%B3%E6%BB%91%E6%8F%90%E9%86%92.jpg" style='width: 350rpx;height: 210rpx;float:left;'></image>
+        <view class="box1a1" style='float:left; margin-top:-150rpx; margin-left:46rpx; '>右滑屏幕开启 》》
+            <span style=" display:block;margin-top:6rpx;margin-left:96rpx;">分类</span>
+        </view>
+        </view>
+        </view>
+        <view class='box2' ><view class="lunbo"> 
+            <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+                <block wx:for="{{imgUrls}}">
+                  <swiper-item>
+                    <image src="{{item}}" class="slide-image" />
+                  </swiper-item>
+                </block>
+            </swiper>
+        </view>
+      </view>
+<view class="box03"><span style=" display:block;margin-top:18rpx;margin-left:18rpx;font-size:35rpx; color:rgb(73, 73, 73);">每日精选</span></view>
+          <view class='box3'>
+          <view class='box3a' bindtap="book1"><image src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/%E4%B8%96%E9%97%B4%E9%A3%8E%E7%89%A9%E5%A5%BD.gif" style='width: 350rpx;height: 210rpx;float:left;'></image>
+        <view class="box3a1" style='float:left; margin-top:-150rpx; margin-left:95rpx; '>时间风物好<span style=" display:block;margin-top:6rpx;margin-left:34rpx;">梁实秋</span></view>
+        </view>
+        <view class='box3b' bindtap="book2">
+        <image src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/%E6%9C%AA%E6%A0%87%E9%A2%98-3.gif" style='width: 350rpx;height: 210rpx;float:left;'></image>
+        <view class="box3a1" style='float:left; margin-top:-150rpx; margin-left:46rpx; '>有一天，他们老了<span style=" display:block;margin-top:6rpx;margin-left:96rpx;">苏青</span></view>
+        </view>
+          </view>
+          <!-- <view class="box03"><span style=" display:block;margin-top:10rpx;margin-left:18rpx;font-size:30rpx;">书籍推荐</span></view> -->
+           <view class='box4'>
+           <view class="box4a">
+           <view class="box4a1">
+           请记住日事日清
+           </view>
+           
+           <view class="box4a2">
+           <view class="box4a2-left"><image src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/%E8%AF%B7%E8%AE%B0%E4%BD%8F%E6%97%A5%E4%BA%8B%E6%97%A5%E6%B8%85.jpg" style='width: 170rpx;height: 210rpx;float:left;'></image></view>
+           <view class="box4a2-right1">管理人生，管理自己，管理人生起点。是管理好人生和未来的基础</view>
+           <view class="box4a2-right2">作者/管理达人</view>
+           </view>
+           </view>
+           </view>
+           <view class='box4'>
+           <view class="box4a">
+           <view class="box4a1">
+          大学四年
+           </view>
+           <view class="box4a2">
+           <view class="box4a2-left"><image src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/%E5%A4%A7%E5%AD%A6%E5%9B%9B%E5%B9%B4.jpg" style='width: 170rpx;height: 210rpx;float:left;'></image></view>
+           <view class="box4a2-right1">真诚有效的生活指导,干货满满的学习技巧，直接老道的就业经验。</view>
+           <view class="box4a2-right2">知乎/独立编著</view>
+           </view>
+           </view>
+           </view>
+           <view class='box4'>
+           <view class="box4a">
+           <view class="box4a1">
+           在耶鲁精进
+           </view>
+           <view class="box4a2">
+           <view class="box4a2-left">
+                <image src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/%E5%9C%A8%E8%80%B6%E9%B2%81%E7%B2%BE%E8%BF%9B.jpg" style='width: 170rpx;height: 210rpx;float:left;'>
+                </image>
+           </view>
+           <view class="box4a2-right1">用世界精英知识库，教你重新规划世界。成为专才之前，先成为通才。</view>
+           <view class="box4a2-right2">王烁/耶鲁世界学人</view>
+           </view>
+           </view>
+           </view>
+           </scroll-view>
+    </view>
+</view>

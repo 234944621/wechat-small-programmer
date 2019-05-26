@@ -1,0 +1,66 @@
+<!--pages/mainxiangqing/mainxiangqing.wxml-->
+<view class='main'>
+   <view class='top'>
+      <view class="{{needAni ? 'bus scale': 'bus'}}">
+          <image src='https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/购物车.png' class='top_one' bindtap='jumpPage'></image>
+          <view class="count" hidden="{{hideCount}}">{{count}}</view>
+      </view>
+
+
+         <image src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/心.png" style="display:{{show}}" bindtap='collected' id="{{booklist[0]._id}}" class='top_two'></image>
+                  <image src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/红心.png" style="display:{{hide}}" bindtap='no_collected' id="{{booklist[0]._id}}" class='top_two'></image> 
+            
+        
+                  
+          <button   class="share1"  open-type='share'>
+               <image src='https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/分享.png' class='top_three'></image>
+          </button>
+   </view>
+   <view class='center'>
+        <view class='center-top'>
+          <image src='{{booklist[0].img}}' class='center-pic'></image>
+        </view>
+        <view class='center-center'>
+            <view class='title'>{{booklist[0].bname}}</view>
+            <view class='autor'>{{booklist[0].bauthor}}</view>
+        </view>
+        <view class='center-bottom'>
+          <view class='center-bottom-left'>
+              <p>{{booklist[0].price}}</p>
+          </view>
+          <!-- <view class='center-bottom-center'>
+            <view class='center-bottom-center-main'></view>
+          </view> -->
+          <view class='center-bottom-right'>
+            <p>库存:{{booklist[0].inventory}}</p>
+            <p>销量:{{booklist[0].sale}}</p>
+          </view>
+        </view>
+   </view>
+   <view class='bottom' id='bottom'>
+      <view class=" {{menuFixed ? 'fixed': ''}}" id="fix">
+          <view class='tab  {{currentData == 0 ? "tabBorer" : ""}}'  data-current = "0" bindtap='checkCurrent'>书籍简介</view>
+          <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}'  data-current = "1" bindtap='checkCurrent'>评价</view>
+      </view>
+      <swiper current="{{currentData}}" class='swiper' style="height:600px;" duration="300" bindchange="bindchange">
+          <swiper-item>
+              <view class='swiper_con'>{{booklist[0].synopsis}}</view>
+          </swiper-item> 
+          <swiper-item>
+                <view class='swiper_con'>好评率:100%</view>
+          </swiper-item>
+      </swiper>
+  </view>
+  <view class='bottom-menu'>
+    <view class='bottom-menu-left' bindtap='jumpPage1'>
+       <image src='https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/书城(1).png' class='shucheng'></image>
+       <p>书城</p>
+    </view>
+    <view bindtap="touchOnGoods" id='{{booklist[0]._id}}' wx:key="keys" class="goods" hover-class="goods_hover" wx:for="{{goods_list}}">
+          <view class='bottom-menu-right'>加入购物车</view>
+    </view>
+    <!-- <view class="good_box" hidden="{{hide_good_box}}"  style="left: {{bus_x}}px; top: {{bus_y}}px;">
+          <image src="https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=8b194727aa44ad342ebf8081e8996bc9/4afbfbedab64034f62ca27cca4c379310b551df0.jpg"></image>
+    </view> -->
+  </view>
+</view>

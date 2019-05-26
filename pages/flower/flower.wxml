@@ -1,0 +1,41 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="card_wrap">
+    <view bindtap="slidethis" animation="{{ animationlist[id] }}" class="card_item card{{ id + 1 }} zindex{{ zindex[(2-id)] }} " wx:for="{{ cardInfoList }}"  wx:key="unique" wx:for-index="id" wx:for-item="item">
+      <span class="change_icon" bindtap="slidethis">
+        <!-- <image src="http://img0.imgtn.bdimg.com/it/u=1613375598,204764892&fm=26&gp=0.jpg"></image> -->
+      </span>
+      <!-- <view class="card_info">
+        <blockquote class="card_info_mes_title"><image src="{{item.cardInfo.cardImg}}" style="height:240rpx; width:180rpx;"></image></blockquote>
+
+         <view class='top-right'>
+            <view class='top-right-top'>
+                <view class='one'><h5>{{ item.cardInfo.cardTitle }}</h5></view>
+                <view class='two'><p>作者:{{ item.cardInfo.cardName }}</p></view>
+                <view class='three'><span>￥{{ item.cardInfo.cardPrice }}</span></view>
+                <view class='four'>
+                    <a class="a1">库存:1000件</a>
+                    <a class="a2">销量:100件</a>
+                </view>
+            </view>
+            </view>
+        <view  class="text">
+        <span class="card_info_mes_item font-light content3" wx:for="{{item.cardInfo.cardInfoMes }}"  wx:key="unique2" wx:for-index="idx" wx:for-item="cradMes"  style="margin-top: {{  idx === 0 ? 15 : 0 }}px; font-size:17px; width:300rpx; height:100rpx; ">
+          {{ cradMes }}
+        </span>
+        </view>
+        <view class="btn-cta buy_btn" catchtap='shoucang'><view class="btn-cta buy">收藏</view><image src="{{ item.cardInfo.cardXing}}" class='image' id='image'  style='display:{{show}};width:40rpx; height:40rpx;margin-left:90rpx; margin-top:-44rpx;' catchtap='collected'>
+                </image>
+                <image src="{{ item.cardInfo.cardXing2}}" class='imagehide'  style='display:{{hide}}; width:40rpx; height:40rpx;margin-left:90rpx; margin-top:-44rpx;' catchtap='no_collected'></image></view>
+        <view class="btn-cta buy_btn2" catchtap='xq'>详情</view>
+      </view> -->
+      
+      <image src="{{ item.cardUrl }}"></image>
+    </view>
+  </view>
+  
+</view>
+<view class="kaishi" bindtap="kaishi">
+   <p>我知道了</p>
+   <image src='https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/进入.png'></image>
+</view>

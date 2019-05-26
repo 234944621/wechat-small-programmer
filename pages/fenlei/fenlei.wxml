@@ -1,0 +1,57 @@
+<view class="container">
+  <view class="page-body">
+    <view class="page-section page-section-spacing swiper">
+      <swiper previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px" bindchange="swiperChange" >
+        <block wx:for="{{booklist}}" wx:key="*this">
+          <swiper-item  >
+          <view class="main">
+            <view class="swiper-item {{item}}" >
+            <view class="box0"  bindtap='xiangxi'>
+              <view class="box1" >
+                <view class="card_info">
+                   <blockquote class="card_info_mes_title">
+                    <image class='cover' src='{{item.img}}' style="height:370rpx; width:280rpx;"></image>
+                  </blockquote>
+                  <view class='top-right'>
+                    <view class='top-right-top'>
+                        <view class='one'><h5>{{item.bname}}</h5></view>
+                        <view class='two'><p>书籍简介:</p></view>
+                        <view class='three'>
+                            <span>{{item.synopsis}}</span>
+                        </view>   
+                                
+                    </view>
+                    
+                  </view>    
+                </view><view  class="text">
+                <span class=" content3" >
+                “{{item.sentence}}”
+                </span>   
+                <view class=' content4'><p>-----{{item.bauthor}}</p></view>
+              </view>
+              </view>
+              </view>
+        </view>
+            </view>                
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    
+  <view class="bottom">
+      <view class="chakan" bindtap='jumpPage' id="{{current+1}}"><view><image src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/书图标.png" style='width:56rpx; height:56rpx;'></image></view>
+        <block wx:for="{{booklist}}" wx:key="*this">
+      <view class='chakan-text'  >查看书籍</view></block>
+  </view>
+        <view class="xin">
+            <image src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/心.png" style="width:60rpx; height:60rpx; display:{{show}}" bindtap='collected'></image>
+            <image src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/红心.png" style="width:60rpx; height:60rpx; display:{{hide}}" bindtap='no_collected'></image>
+        </view>
+        <view class="share" >
+            <button  class="share1"  open-type='share' >
+                <image src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/分享.png" style="width:47rpx; height:47rpx;"></image>
+            </button>
+        </view>
+        </view>
+        </view>
+</view>

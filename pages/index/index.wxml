@@ -1,0 +1,13 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    
+    
+      <image bindtap="bindViewTap" bindgetuserinfo="getUserInfo" class="userinfo-avatar" src="{{userInfo.url}}" mode="cover" name="userimage"></image>
+      <text class="userinfo-nickname" name="username">{{userInfo.name}}</text>
+      <!-- <text class="userinfo-openid">{{userInfo.openid}}</text> -->
+    
+  </view>
+  <view class='index-main'>{{text}}</view>
+  <view class='index-main1' >{{text1}}</view>
+</view>

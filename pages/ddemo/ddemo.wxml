@@ -1,0 +1,102 @@
+<scroll-view scroll-y="true" style="width: 100%; height: 100%">
+<block wx:if="{{!isList}}">
+<view bindtouchend="touchEnd" bindtouchstart="touchStart" class="container">
+    <view class="one {{ view[0].in }} {{ view[0].out }}" style="width: 100%; height: 100%">
+        <image class="one-one {{ one_one }}" src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/雾.png"></image>
+        <image class="one-two {{ one_two }}" src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/wenzi.png"></image>
+        <view class="one-three {{ one_three }}">专注/图书/放下手机</view>
+        <view class="one-four {{ one_four }}">属于你的专注平台就在这里</view>
+        <view class="one-five {{ one_five }}">左滑，开启吧......</view>
+    </view>
+    <view class="two {{ view[1].in }} {{ view[1].out }}" style="width: 100%; height: 100%">
+       <view class='main-photo'>
+              <view class='photo1' animation="{{animTranspond}}" bindtap="transpond">
+                   <image src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/反馈(1).png" class="img-style" bindtap="switchList"></image>
+              </view>
+              <view class='photo2' animation="{{animInput}}" bindtap="input">
+                   <image src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/钱.png" class="img-style1"  bindtap='jumpPage0'></image>
+              </view>
+              <view class='photo3' animation="{{animCollect}}" bindtap="submit">
+                   <image src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/问号.png" class="img-style"></image>
+              </view>
+              <view class='photo'>
+                   <image src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/加号(2).png" class="img-plus-style" animation="{{animPlus}}" bindtap="plus"></image>
+              </view>
+    </view>
+    <view class="modalDlg" wx:if="{{showModal}}">
+          <view class='content'>
+             <p>该小程序目的鼓励大家减少玩手机的时间，在专注过程中，不允许离开小程序当前界面，若离开，将视为自动放弃专注，专注时间停止，若达到设置的专注时间，则专注成功，专注时间越长，就会相应的获得越多的金币，得到的金币可以在购书时抵用，减少购书的价钱。</p>
+          </view>
+          <view class='close_mask' bindtap="close_mask"><p>确定</p></view>
+    </view>
+    <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+    <view  class="two-one {{ two_one }}" style='display:{{jb}}'>
+            <view class='box'  >
+              <view class='box2'  style='transform: rotate({{jiaodu}}deg);transform-origin:38rpx 244rpx ;'></view>
+            </view>
+    </view>
+    <view class='boxa' style='display:{{jb1}}' bindtap="jinbi" animation="{{animationData}}">
+        <view class='box2a'  >
+              <view class="money">+5 $</view>
+        </view>
+    </view>
+<!-- <view animation="{{animationData}}" bindtap="jinbi" style="background:red;height:100rpx;width:100rpx"></view> -->
+    <view class="two-two {{ two_two }}"><view class="section" style='display:{{shijian}}'>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">
+        开启专注
+        <!-- 专注时间{{array[index]}} -->
+        </view>
+      </picker>
+    </view>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+           <view class="section-b" style='display:{{shijianb}}' >{{min}} : {{s}}</view>
+    </picker>
+<view>
+<button bindtap="start"   style='display:{{ks}}' class='ks'>开始计时</button>
+<button bindtap="end"  style='display:{{fq}}'  class='fq'>放弃</button>
+</view>
+</view>
+<!-- <image class="two-one {{ two_one }}" src="../../images/7.png"></image> -->
+<!-- <image class="two-two {{ two_two }}" src="../../images/14.png"></image> -->
+<!-- <image class="two-three {{ two_three }}" src="../../images/3.png"></image> -->
+<!-- <image class="two-four {{ two_four }}" src="../../images/20.png"></image> -->
+</view>
+            <image class="bottom-top {{ bottom_top }}" src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/背景.png"></image>
+            <image class="bottom-one {{ bottom_one }}" src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/山33.png"></image>
+            <image class="bottom-one2 {{ bottom_one }}" src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/山33.png"></image>
+            <image class="bottom-two {{ bottom_two }}" src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/%E5%B1%B12.gif"></image>
+             <!-- <image class="bottom-two {{ bottom_two }}" src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/山22.png"></image>   -->
+            <image class="bottom-two2 {{ bottom_two }}" src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/%E5%B1%B12.gif"></image>
+            <image class="bottom-three {{ bottom_three }}" src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/%E5%B1%B11.gif"></image>
+            <image class="bottom-three2 {{ bottom_three }}" src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/%E5%B1%B11.gif"></image>
+            <image class="bottom-four {{ bottom_four }}" src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/房子0.png"></image>
+            <image class="bottom-four2 {{ bottom_four }}" src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/房子0.png"></image>
+</view>
+</block>
+<block wx:if="{{isList}}">
+    <image src="https://7a68-zhh-cloud-b7a1a9-1257892988.tcb.qcloud.la/图片列表.svg?sign=cdd9a3f60f57f7a44f96e46afca80b78&t=1540887036" class='photo200' bindtap="switchList"></image>
+    <view class="account__list">
+      <view class="account__list-create">
+        <view class="account__list-year">{{year}}</view>
+        <view class="account__list-new account__list-public">
+          <view class="account__list-point"></view>
+          <view class="account__list-time">{{now}}</view>
+          <view class="account__list-title" wx:for='{{goodList}}' wx:for-item="good" wx:key="good.name">
+              <p>我的小专注：<span>{{good.sumtime}}</span></p>
+              <h6>{{good.result}}</h6>
+              <h5>------<span wx:for-item="time">{{time}}</span></h5>
+          </view>
+        </view>
+        <block wx:for="{{accounts}}" wx:key="index">
+          <view class="account__list-item account__list-public" bindtap="viewDetail" data-account="{{item}}">
+            <view class="account__list-point"></view>
+            <image src="{{item.coverUrl}}" mode="aspectFill"></image>
+            <view class="account__list-name">{{item.inputValue}}</view>
+            <view class="account__list-time">{{item.now}}</view>
+          </view>
+      </block>
+      </view>
+    </view>
+</block>
+</scroll-view>

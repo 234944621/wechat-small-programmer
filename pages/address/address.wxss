@@ -1,0 +1,174 @@
+/* pages/address/address.wxss */
+/* 最外层视图  pages*/
+ 
+/* 列表 */
+ 
+.cont {
+  position: relative;
+  width: 100%;
+  height: 180rpx;
+  border-bottom: 2rpx solid #ebebeb;
+  /* background-color: red; */
+}
+ 
+/* 信息 */
+ 
+.list {
+  position: relative;
+  width: 100%;
+  height: 60rpx;
+  top: 40rpx;
+  line-height: 60rpx;
+  /* background-color: yellow; */
+}
+ 
+/* 姓名 */
+ 
+.name {
+  position: absolute;
+  left: 40rpx;
+  font-weight: bolder;
+  font-size: 32rpx;
+  color: #333;
+}
+ 
+/* 编号 */
+ 
+.base_id {
+  position: absolute;
+  left: 150rpx;
+  font-size: 28rpx;
+  color: #b3b3b3;
+}
+ 
+/* 电话 */
+ 
+.tell {
+  position: absolute;
+  right: 40rpx;
+  font-size: 14px;
+  color: #333;
+}
+ 
+/* 地址 */
+ 
+.address {
+  position: relative;
+  width: 100%;
+  height: 50rpx;
+  top: 50rpx;
+  line-height: 50rpx;
+  /* background-color: yellow; */
+}
+ 
+/* 信息地址 */
+ 
+.add_name {
+  position: absolute;
+  left: 40rpx;
+  font-size: 24rpx;
+  color: #8b8b8b;
+}
+ 
+/* 选择 */
+ 
+.radio {
+  position: relative;
+  width: 100%;
+  height: 120rpx;
+  line-height: 120rpx;
+  border-bottom: 8rpx solid #f4f4f4;
+  /* background-color: red; */
+}
+ 
+/* iCON */
+ 
+.radio_img {
+  position: absolute;
+  top: 38rpx;
+  left: 40rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+ 
+.radio_name {
+  position: absolute;
+  left: 80rpx;
+  font-size: 24rpx;
+  color: #8b8b8b;
+}
+ 
+/* 修改 */
+ 
+.update {
+  position: absolute;
+  top: 28%;
+  right: 185rpx;
+  display: inline-block;
+  width: 120rpx;
+  text-align: center;
+  height: 48rpx;
+  font-size: 30rpx;
+  line-height: 48rpx;
+  /* border-radius: 100rpx; */
+  border: 1px solid #dedede;
+}
+ 
+/* 删除 */
+ 
+.delete {
+  position: absolute;
+  top: 28%;
+  right: 40rpx;
+  display: inline-block;
+  width: 120rpx;
+  text-align: center;
+  height: 48rpx;
+  font-size: 30rpx;
+  line-height: 48rpx;
+  /* border-radius: 100rpx; */
+  border: 1px solid #dedede;
+}
+ 
+ 
+/* 新增 */
+.add{
+  position: relative;
+  top: 282rpx;
+  width: 100%;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+
+
+.good_checkbox {
+  float:left;
+  width:70rpx;
+  height:100rpx;
+}
+icon{
+  position: absolute;
+  top: 17%;
+  left: 2%;
+}
+
+.checkbox {
+  float: left;
+  width: 48rpx;
+  height: 48rpx;
+}
+/* 新增按钮 */
+.btn_submit{
+  background-color: #63afaa;
+  width: 80%;
+  height: 76rpx;
+  line-height: 76rpx;
+  position: fixed;
+  bottom: 10%;
+  border-radius: 50rpx;
+  font-size: 28rpx;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+  margin-left: 10%;
+}

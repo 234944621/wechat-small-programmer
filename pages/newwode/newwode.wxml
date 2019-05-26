@@ -1,0 +1,54 @@
+<!--pages/newwode/newwode.wxml-->
+<view class='main'>
+   <view class='wode-top'>
+      <view class='yuanhu'></view>
+         <image bindtap="bindViewTap"  class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+     </view>
+   <view class='center'>
+      <view class='center-top'>  
+         <view class='center-top-one' bindtap='jumpPage'>
+            <image src='https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/心(1).png' class='pic'></image>
+            <p>我的收藏</p>
+         </view>
+         <view class='center-top-two' bindtap='jumpPage0'>
+            <image src='https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/金币(2).png' class='pic'></image>
+            <p>我的金币</p>
+         </view>
+         <view class='center-top-two' bindtap='jumpPage1'>
+           <image src='https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/收货地址.png' class='pic'></image>
+           <p>收货地址</p>
+         </view>
+      </view>
+      <view class='center-center'>
+         <view class='center-center-top'>
+           <p class='p1'>我的订单</p>
+           <p class='p2'  bindtap="view1">全部订单 ></p>
+         </view>
+         <view class='center-center-main'>
+            <view class='top'>
+               <view class='left1'  bindtap="view2">
+                  <image src='https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/待付款.png' class='pic1'></image>
+                  <p>待付款</p>
+               </view>
+               <view class='right1'  bindtap="view3">
+                   <image src='https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/待发货.png' class='pic1'></image>
+                   <p>待发货</p>
+               </view>
+            </view>
+            <view class='bottom'>
+               <view class='left'  bindtap="view4">
+                    <image src='https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/待收货.png' class='pic1'></image>
+                    <p>待收货</p>
+               </view>
+               <view class='right'  bindtap="view5">
+                    <image src='https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/待评价(2).png' class='pic1'></image>
+                    <p>待评价</p>
+               </view>
+            </view>
+         </view>
+      </view>
+   </view>
+</view>
+<!-- <scroll-view scroll-x="true" class="tab {{tabFix}}"  id="tab" scroll-into-view="{{intoView}}">
+</scroll-view> -->

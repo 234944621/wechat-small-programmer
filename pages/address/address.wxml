@@ -1,0 +1,42 @@
+<view class='pages'>
+  <checkbox-group bindchange="checkboxChange">
+      <view class='head' wx:for="{{list}}" wx:key="list" data-id='{{item.id}}'wx:for-item="item" data-index="{{index}}" >
+        <!-- 列表 -->
+        <view class='cont'>
+          <!-- 信息 -->
+          <view class='list'>
+            <!-- 姓名 -->
+            <label class='name'>
+              {{item.username}}
+            </label>
+            <!-- 电话 -->
+            <label class='tell'>{{item.usernumber}}</label>
+          </view>
+          <!-- 地址 -->
+          <view class='address'>
+            <label class='add_name'>{{item.userdizhi}} {{item.useraddress}}</label>
+          </view>
+        </view>
+    
+        <!--选择 -->
+        <view class='radio' >
+          <!-- if   -->
+          <view class='good_checkbox'>
+              <label class="checkbox">
+                  <checkbox value="{{good._id}}" checked="{{good.checked}}" hidden='hidden' />
+                  <icon type="circle" size="23" wx:if="{{!good.checked}}"></icon>
+                  <icon type="success" size="23" wx:if="{{good.checked}}"></icon>
+              </label>
+          </view>
+         
+          <label class='radio_name'>设置默认收货地址</label>
+          <label class='delete'  bindtap="deleteList" id='{{item._id}}'>删除</label>
+        </view>  
+        <!-- 新增 -->
+      </view>
+    </checkbox-group>
+      <view class='add'>
+        <!-- btn -->
+        <view class='btn_submit' bindtap='jumpPage1' type='primary'>+新增收货地址</view>
+      </view> 
+</view>

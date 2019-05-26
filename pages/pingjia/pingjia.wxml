@@ -1,0 +1,45 @@
+<view>
+    <view class='score'>
+        <view class='score-left'>
+            <image src='{{goods_img}}' />
+            <view>
+                <text>描述相符</text>
+            </view>
+        </view>
+        <view class='score-right'>
+            <view wx:for-items="{{score_img_arr}}" wx:for-item="img" wx:key="index">
+                <image bindtap='onScore' data-score='{{index+1}}' src="{{img}}" />
+            </view>
+            <view class='score_text'>
+                <text>{{score_text}}</text>
+            </view>
+        </view>
+    </view>
+
+    <view class='textarea'>
+        <textarea placeholder-class='textarea-text' placeholder='宝贝满足你的期待吗？说说你的使用心得，分享给想买的他们吧!'></textarea>
+        <view class='picture'>
+            <view class='picture' wx:if="{{!is_upload}}">
+                <view class='picture_item' bindtap="chooseImage">
+                    <image src='{{camera_pic}}'  />
+                    <!-- <p>添加图片</p> -->
+                </view>
+            </view>
+            <view wx:else  class='picture'>
+                <view class='picture_upload' bindtap="" wx:for-items="{{upload_pic}}" wx:for-item="pic" wx:key="index" >
+                    <image  src='{{pic}}'  />
+                    <view class='picture_delete' bindtap='deletePic' data-pic_index='{{index}}'>
+                        <image src='{{delete_ico}}' />
+                    </view>
+                </view>
+                <view class='picture_item' bindtap="chooseImage" hidden="{{pic_length}}">
+                    <image src='{{camera_pic}}'  />
+                </view>
+            </view>
+        </view>
+    </view>
+    
+    <view class='footer'>
+          <button class='release' bindtap='onSubmit' style='border-radius: 0; border-style:none;'>发布</button>
+    </view>
+</view>
