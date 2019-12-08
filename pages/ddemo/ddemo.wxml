@@ -35,9 +35,9 @@
               <view class='box2'  style='transform: rotate({{jiaodu}}deg);transform-origin:38rpx 244rpx ;'></view>
             </view>
     </view>
-    <view class='boxa' style='display:{{jb1}}' bindtap="jinbi" animation="{{animationData}}">
+    <view class='boxa' style='display:{{display}}' bindtap="jinbi" animation="{{animationData}}">
         <view class='box2a'  >
-              <view class="money">+5 $</view>
+              <view class="money">+{{money}} $</view>
         </view>
     </view>
 <!-- <view animation="{{animationData}}" bindtap="jinbi" style="background:red;height:100rpx;width:100rpx"></view> -->

@@ -16,18 +16,22 @@
   bottom: -50px;
   content: "";
   z-index: 9;
-  height: 200rpx;
+  height: 200rpx;     
   width: 100%;
   border-radius: 50%;
   background-color: #fff;
 }
 .userinfo-nickname {
   color: #000;
-  position:absolute;
-  margin-left:46%;
-  margin-top: 270rpx;
+  position:relative;
+  text-align: center;
+  bottom: -88%;
+  clear: both;
+  display: block;
+  content: "";
   font-size: 35rpx;
   z-index: 99;
+
 }
 .userinfo-avatar {
   width: 120rpx;

@@ -19,7 +19,7 @@
         </view>
     </view>
     
-    <view  class="page-top" bindtouchstart="tap_start"   style="{{translate}}"> 
+    <view bindtouchmove="tap_drag" bindtouchend="tap_end" class="page-top" bindtouchstart="tap_start"   style="{{translate}}"> 
      <scroll-view  scroll-y style="height:100%;" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
     <!-- <view class="form">
       <searchbar isnavigator="{{true}}"></searchbar>
@@ -27,7 +27,6 @@
     <image bindtap="tap_ch"  src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/列表(1).png" class="image1"></image>
         <view class="search"> 
             <input class="search-input" placeholder="请输入你想要搜索的书籍" bindtap="bindFocus" auto-focus >
-                <!-- <icon type="search" size="20" color="purple" class="search-icon inside"/> -->
                 <image src='https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/搜索.png' class='photo'></image>
             </input>
         </view>
@@ -54,17 +53,17 @@
       </view>
 <view class="box03"><span style=" display:block;margin-top:18rpx;margin-left:18rpx;font-size:35rpx; color:rgb(73, 73, 73);">每日精选</span></view>
           <view class='box3'>
-          <view class='box3a' bindtap="book1"><image src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/%E4%B8%96%E9%97%B4%E9%A3%8E%E7%89%A9%E5%A5%BD.gif" style='width: 350rpx;height: 210rpx;float:left;'></image>
-        <view class="box3a1" style='float:left; margin-top:-150rpx; margin-left:95rpx; '>时间风物好<span style=" display:block;margin-top:6rpx;margin-left:34rpx;">梁实秋</span></view>
+          <view class='box3a' bindtap="book1" id='04e2281f-9e4f-4d70-b3dd-b424655d567b'><image src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/%E4%B8%96%E9%97%B4%E9%A3%8E%E7%89%A9%E5%A5%BD.gif" style='width: 350rpx;height: 210rpx;float:left;'></image>
+        <view class="box3a1" style='float:left; margin-top:-150rpx; margin-left:95rpx; '>世间风物好<span style=" display:block;margin-top:6rpx;margin-left:34rpx;">梁实秋</span></view>
         </view>
-        <view class='box3b' bindtap="book2">
+        <view class='box3b' bindtap="book2" id='298f2e97-b0c9-4d04-9ac4-6d81162d6669'>
         <image src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/%E6%9C%AA%E6%A0%87%E9%A2%98-3.gif" style='width: 350rpx;height: 210rpx;float:left;'></image>
         <view class="box3a1" style='float:left; margin-top:-150rpx; margin-left:46rpx; '>有一天，他们老了<span style=" display:block;margin-top:6rpx;margin-left:96rpx;">苏青</span></view>
         </view>
           </view>
           <!-- <view class="box03"><span style=" display:block;margin-top:10rpx;margin-left:18rpx;font-size:30rpx;">书籍推荐</span></view> -->
            <view class='box4'>
-           <view class="box4a">
+           <view class="box4a" bindtap="book3" id='f86bf630-b736-45c9-bdb9-273b96037a0a' >
            <view class="box4a1">
            请记住日事日清
            </view>
@@ -77,7 +76,7 @@
            </view>
            </view>
            <view class='box4'>
-           <view class="box4a">
+           <view class="box4a" bindtap="book4" id='0dec7809-3d4b-4e83-b5f1-32b032cbf3c4'>
            <view class="box4a1">
           大学四年
            </view>
@@ -89,7 +88,7 @@
            </view>
            </view>
            <view class='box4'>
-           <view class="box4a">
+           <view class="box4a" bindtap="book5" id='XPEwrhJZb-wmU-OP'>
            <view class="box4a1">
            在耶鲁精进
            </view>

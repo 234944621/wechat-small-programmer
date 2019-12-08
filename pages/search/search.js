@@ -3,14 +3,31 @@
 var app = getApp()
 Page({
   data: {
-    selectHide: false,
+    iscart: true,
     inputValue: '',
     getSearch: [],
+    books:[],
     modalHidden: true
   },
   bindInput: function (e) {
-    this.setData({
-      inputValue: e.detail.value
+    const db = wx.cloud.database({
+      env: 'shiguangshucheng-9845f6'
+    });
+    db.collection('books').where({
+      //使用正则查询，实现对搜索的模糊查询
+      bname: db.RegExp({
+        regexp: e.detail.value,
+        //从搜索栏中获取的value作为规则进行匹配。
+      })
+    }).get({
+      success: res => {
+        console.log(res.data)
+        this.setData({
+          books: res.data,
+          inputValue: e.detail.value,
+          iscart: false
+        })
+      }
     })
     console.log('bindInput' + this.data.inputValue)
   },
@@ -64,18 +81,24 @@ Page({
     })
     console.log('search is onshow')
   },
-  onHide: function () {
-    console.log('search is onHide')
-    wx.redirectTo({
-      url: '../search/search'
-    })
-  },
+  // onHide: function () {
+  //   console.log('search is onHide')
+  //   wx.redirectTo({
+  //     url: '../search/search'
+  //   })
+  // },
   bindchange: function (e) {
     console.log('bindchange')
   },
   clearInput: function () {
     this.setData({
       inputValue: ''
+    })
+  },
+  jumpPage: function (e) {
+    console.log(e)
+    wx.navigateTo({
+      url: '/pages/mainxiangqing/mainxiangqing?id=' + e.currentTarget.id,
     })
   }
 })

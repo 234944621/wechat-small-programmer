@@ -1,2 +1,6 @@
 <!--pages/result/result.wxml-->
-<view>假设这就是个结果</view>
+<view class="cartList">  
+    <image src="https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/一片空白的豆丁-1.png"/>  
+    <view>暂无该书籍</view>  
+    <view class='null-small' type='primary' bindtap='jumpPage'><p>再去逛逛</p></view>
+</view>

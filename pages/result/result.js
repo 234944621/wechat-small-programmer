@@ -56,6 +56,11 @@ Page({
   onReachBottom: function () {
 
   },
+  jumpPage: function () {
+    wx.switchTab({
+      url: '/pages/mainfenlei/mainfenlei',
+    })
+  },
 
   /**
    * 用户点击右上角分享

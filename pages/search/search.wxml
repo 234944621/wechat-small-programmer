@@ -2,21 +2,27 @@
   <view class="nav-header"> 
     <view class="search"> 
         <view class='box'>
-            <input class="search-input" placeholder="请输入你想要搜索的书籍" auto-focus
-            bindinput="bindInput"  bindchange="bindchange" value="{{inputValue}}"/>
+          <input class="search-input" placeholder="请输入你想要搜索的书籍" auto-focus bindinput="bindInput" bindchange="bindchange" value="{{inputValue}}"/>
+        </view>        
+        <view style="display:inline-block;" bindtap="setSearchStorage" class='btn'>
+          <image src='https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/搜索.png' class='photo'></image>
         </view>
-        
-        <view style="display:inline-block;" bindtap="setSearchStorage" class='btn'><image src='https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/搜索.png' class='photo'></image></view>
     </view>
   </view>
+  <!-- <view class='content' hidden="{{iscart}}" wx:for="{{books}}" wx:for-item="item">
+    <view class='content-main'><p>{{item.bname}}</p></view>
+  </view> -->
+  <view   wx:for="{{books}}" wx:key="{{item.id}}"  data-id = "{{item.id}}">
+    <view class='content-main' bindtap='jumpPage'id='{{item._id}}'><p>{{item.bname}}</p></view>
+  </view>
   <view class="zong">
-    <view class="local" wx:for="{{getSearch}}" wx:for-index="idx" wx:for-item="itemName" wx:key="idx" >
-      <view wx:if="{{itemName != ''}}"> {{itemName}} </view>
-    </view>
-    <modal class="modal" hidden="{{modalHidden}}" bindconfirm="modalChangeConfirm" bindcancel="modalChangeCancel">
+     
+    <!-- <modal class="modal" hidden="{{modalHidden}}" bindconfirm="modalChangeConfirm" bindcancel="modalChangeCancel">
       <view class="small"> 确定删除历史记录 </view>
     </modal>
     <p class="p">历史记录</p>
-    <view style="display:inline-block" bindtap="clearSearchStorage"><image src='https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/垃圾箱.png' class='shanchu'></image></view>
+    <view style="display:inline-block" bindtap="clearSearchStorage">
+      <image src='https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/垃圾箱.png' class='shanchu'></image>
+    </view> -->
   </view>
 </view>

@@ -18,6 +18,7 @@ Page({
     var array = [];
     var result = [];
     var clecte = this.data.clecte;
+    clecte = [];
     if (app.globalData.openid) {
       this.setData({
         openid: app.globalData.openid
@@ -28,22 +29,17 @@ Page({
       _openid: this.data.openid
     }).get({
       success: res => {
-        // console.log(res.data)
         result = res.data;
-        console.log(result)
+        // console.log(result)
         console.log(res.data.length)
         // console.log(res.data[0].bid)
         for (var i = 0; i < res.data.length; i++) {
-          console.log(res.data[i].bid)
+          // console.log(res.data[i].bid)
           db.collection('books').where({
             _id: res.data[i].bid
           }).get({
             success: res => {
               clecte.push(res.data[0])
-              // console.log(result)
-              // console.log(result[i].number)
-              // clecte[i].number = result[i].number
-              // console.log(clecte)
               wx.setStorageSync('clecte', clecte)
             },
             fail: err => {
@@ -56,16 +52,16 @@ Page({
           })
         }
         array = wx.getStorageSync('clecte')//获得缓存
-        for (var i = 0; i < res.data.length; i++){
+        // console.log(result)
+        for (var i = 0; i <array.length; i++){
           array[i].number = result[i].number
           array[i].checked = false
         }
-        // console.log(array)
+        console.log(array)
         this.setData({
           goodList: array
         })
-        // console.log(this.data.goodList)
-        wx.removeStorageSync('clecte')
+        // wx.removeStorageSync('clecte')
       },
       fail: err => {
         wx.showToast({
@@ -76,14 +72,26 @@ Page({
       }
     })
   },
+  onShow:function(){
+    this.onLoad();
+  },
   /**
    * 删除购物车当前商品
    */
   deleteList(e) {
-    const index = e.currentTarget.dataset.index;
-    console.log(index)
+    console.log(e.currentTarget.id);
+    // console.log(234456)
+    console.log(this.data.goodlist)
+    console.log(e)
+    // const index = e.currentTarget.dataset.index;
     let goodList = this.data.goodList;
-    goodList.splice(index, 1);
+    for (var i = 0; i < this.data.goodList.length; i++) {
+      if (this.data.goodList[i]["_id"] == e.currentTarget.id) {
+        console.log(9999)
+        goodList.splice(i, 1);
+        // wx.removeStorageSync('shoucang')
+      }
+    }
     this.setData({
       goodList: goodList
     });
@@ -173,7 +181,10 @@ Page({
    * 用户选择购物车商品
    */
   checkboxChange: function (e) {
+    app.globalData.allvalue = null
+    app.globalData.value = null
     console.log('checkbox发生change事件，携带value值为：', e.detail.value);
+    app.globalData.value = e.detail.value
     var checkboxItems = this.data.goodList;
     // console.log(checkboxItems)
     var values = e.detail.value;
@@ -204,7 +215,10 @@ Page({
    * 用户点击全选
    */
   selectalltap: function (e) {
-    // console.log('用户点击全选，携带value值为：', e.detail.value);
+    app.globalData.allvalue = null
+    app.globalData.value = null
+    console.log('用户点击全选，携带value值为：', e.detail.value);
+    app.globalData.allvalue = e.detail.value
     var value = e.detail.value;
     var checkAll = false;
     if (value && value[0]) {
@@ -232,8 +246,21 @@ Page({
     })
   },
   jumpPage111: function () {
+    // console.log(app.globalData.value)
+    // console.log(app.globalData.allvalue)
+    if (app.globalData.value == null){
+      // console.log(app.globalData.allvalue)
+      console.log(app.globalData.allvalue)
+      var id = app.globalData.allvalue
+    }
+    if (app.globalData.allvalue == null) {
+      console.log(app.globalData.value)
+      var id = app.globalData.value
+    }
+    console.log(this.data.totalCount)
+    console.log(this.data.totalPrice)
     wx.navigateTo({
-      url: '/pages/jiesuan/jiesuan',
+      url: '/pages/jiesuan/jiesuan?id=' + id + '&price=' + this.data.totalPrice + '&count=' + this.data.totalCount,
     })
   },
   jumpPage15: function () {

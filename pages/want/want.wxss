@@ -26,14 +26,46 @@
 .button{
   margin-top:25%;
 }
-.box1{
-  height: 60rpx;
-  width: 100%;
-  position: fixed;
- bottom: 17rpx;
-} 
+
 .box2{
-  height: 260rpx;
+  height: 80rpx;
+  width: 100%;
+  /* background-color: #ccc; */
+  z-index: 99;
+  position: absolute;
+  bottom: 0;
+}
+.box2 input{
+  padding-left:3%;
+  height:80rpx;
+  float: left;
+  line-height: 80rpx;
+  width:78%;
+  font-size: 33rpx;
+  background-color: #fff;
+  border-radius: 8rpx;
+  /* border: 1rpx solid #fff; */
+}
+
+.btn{
+  height:80rpx;
+  background:rgb(69,132,145);
+  font-size:30rpx;
+  color:rgb(230,230,196);
+  width:19%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* border-radius: 0; */
+}
+.btn p{
+  color: #fff;
+  font-size: 33rpx;
+  line-height: 80rpx;
+  text-align: center;
+  clear: both;
+  display: block;
+  content: "";
 }
 .box3{
   background-color: rgb(69,132,145);

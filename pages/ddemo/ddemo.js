@@ -15,6 +15,7 @@ Page({
     animTranspond: {},//item位移,透明度
     animInput: {},//item位移,透明度
     time: "",
+    money:'',
     'goodList': [
       {
         'sumtime': '10分钟',
@@ -45,6 +46,8 @@ Page({
     timesetInters: '',
     timesetInterm: '',
     timesetTens: '',
+    timesethide:'',
+    hidetime:0,
     value: '',
     display: 'none',
     shijian: 'block',
@@ -262,12 +265,13 @@ Page({
     console.log('picker发送选择改变，携带值为', e.detail.value);
     console.log((e.detail.value) * 10 + 10);
     function size(min) {
-      return min >= 10 ? min : '0' + min;
+      return min >= 1 ? min : '0' + min;
     }
     this.setData({
       index: e.detail.value,
-      min: size((e.detail.value) * 10 + 10),
-      min1: size((e.detail.value) * 10 + 10),
+      min: size((e.detail.value) * 1 + 1),
+      min1: size((e.detail.value) * 1 + 1),
+      money: size((e.detail.value) * 15 + 10),
       shijian: 'none',
       shijianb: 'block',
       ks: 'block',
@@ -306,12 +310,7 @@ Page({
         return
       }
 
-      console.log(e.z)
-      that.setData({
-        zuobiao1: e.x,
-        zuobiao2: e.y,
-        zuobiao3: e.z
-      })
+  
       if (e.z < 0.8 && !that.data.io) {
         wx.showToast({
           title: '正面，十秒后专注将会被打断',
@@ -382,14 +381,13 @@ Page({
         }
       }
       if (e.z > 0.9 && !that.data.io) {
-        wx.showToast({
-          title: '扣下了',
-          icon: 'none',
-          duration: 2000
-        })
-        console.log(that.data.io)
-        console.log(that.data.isopen)
+        
         if (that.data.isopen) {
+          wx.showToast({
+            title: '扣下了',
+            icon: 'none',
+            duration: 2000
+          })
           that.setData({
             isopen: false,
           })
@@ -425,9 +423,10 @@ Page({
               // ks: 'none',
               // fq: 'block'
             });
-
-            if (jiaodu >= 359.9) {
+            console.log(that.data.min + ":" + (that.data.s))
+            if (that.data.s <= 0 && that.data.min<=0) {
               clearInterval(that.data.setInter);
+              wx.stopAccelerometer();
               var diaplay = that.data.display;
               wx.showToast({
                 title: '成功',
@@ -450,6 +449,7 @@ Page({
                 shijianb: 'none',
                 jb: 'none',
                 jb1: 'block',
+               display:'block'
               })
             }
           }
@@ -511,9 +511,11 @@ Page({
   },
 
   end: function () {
-
-    var that = this;
+    console.log("点击放弃")
+    var that = this
+    wx.stopAccelerometer()
     clearInterval(that.data.setInter);
+    clearInterval(that.data.timesetTens);
     // clearInterval(that.data.timesetInters);
     // clearInterval(that.data.timesetInterm);
     var jiaodu = that.data.jiaodu;
@@ -588,9 +590,7 @@ Page({
         })
     }.bind(this), 1700)
   },
-  onHide: function () {
-
-  },
+ 
   rotateThenScale: function () {
     // 先旋转后放大
     this.animation.rotate(45).step()
@@ -724,6 +724,8 @@ Page({
   },
  
   onShow: function () {
+    // clearInterval(this.data.timesethide);
+    // console.log("end-hide-time:" + this.data.hidetime)
     this.showAnimated();
     var t = this;
     setTimeout(function () {
@@ -770,6 +772,15 @@ Page({
 
   },
   onHide: function () {
+    // var that = this;
+    // that.data.hidetime = 0;
+    // that.data.timesethide = setInterval(
+    //   function () {
+    //     that.data.hidetime += 1;
+    //     console.log("hide-time:" + that.data.hidetime)
+    //   }
+    //   , 1000)
+    
     this.cleanAnimated(),
       this.setData({
         bottom: "",

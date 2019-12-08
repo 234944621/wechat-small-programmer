@@ -13,6 +13,58 @@
     background-color: #fff;
     margin: 20rpx 0; 
 }
+
+.mainaddress{
+  width: 100%;
+  height: 160rpx;
+  background-color: #fff;
+}
+.mainaddress .dizhi{
+  width: 80rpx;
+  height: 80rpx;
+  float: left;
+  margin-top: 40rpx;
+  margin-left: 5%;
+}
+.centeraddress{
+  width: 70%;
+  height: 130rpx;
+  float: left;
+  margin-top: 15rpx;
+  margin-left: 5%;
+}
+.centeraddress p{
+  color: #000;
+  font-size: 32rpx;
+  float: left;
+  margin-top: 10rpx;
+}
+.centeraddress span{
+  color: rgb(116, 114, 114);
+  font-size: 30rpx;
+  float: left;
+  margin-top: 10rpx;
+  margin-left: 2%;
+}
+.centeraddress h6{
+  color: #000;
+  font-size: 28rpx;
+  float: left;
+  margin-top: 10rpx;
+}
+.jinru{
+  width: 40rpx;
+  height: 40rpx;
+  float: right;
+  margin-top: 60rpx;
+  margin-right: 2%;
+}
+
+
+
+
+
+
 .add-addres{
     width: 100%;
 }
@@ -55,11 +107,11 @@ form{
     color: #000;
     padding: 30rpx 0 25rpx 30rpx;
 }
-.goods-list  .a-goods{
+
+/*.goods-list  .a-goods{
     width: 720rpx;
     margin-left: 30rpx;
     display: flex;
-    /*justify-content: space-between;*/
     border-top: 1px solid #eee;
     padding: 30rpx 30rpx 30rpx 0;
 }
@@ -108,12 +160,160 @@ form{
 .a-goods .text-box .arow .goods-num{
     font-size: 26rpx;
     color: #999;
+} */
+.goods-list .good_content {
+  box-sizing: border-box;
+  float:left;
+  width:100%;
+  height:230rpx;
+  /* background-color:red; */
+  margin-top: 20rpx;
 }
+
+
+.good_content .good:last-child {
+  border-bottom: none;
+}
+
+.good_content .good_checkbox {
+  float:left;
+  width:70rpx;
+  height:224rpx;
+  line-height: 278rpx;
+}
+
+
+.good_content .checkbox {
+  float: left;
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.good_content .good_img {
+  float:left;
+  margin-top:30rpx;
+  width:150rpx;
+  height:170rpx;
+  margin-left: 5%;
+}
+.good_content .good_img image {
+  width: 100%;
+  height: 100%;
+}
+
+.good_content .content {
+  box-sizing: border-box;
+  float:left;
+  margin-top:16rpx;
+  width:480rpx;
+  height:95rpx;
+  /* background-color:red; */
+}
+
+.good_content .content .titles {
+  float:left;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  font-size:26rpx;
+  width:500rpx;
+  height:90rpx;
+  color:#000;
+  line-height: 44rpx;
+  margin-left: 25rpx;
+  margin-top: 15rpx;
+}
+
+.good_content .good_footer {
+  box-sizing:border-box;
+  float:left;
+  margin-top:26rpx;
+  margin-left:280rpx;
+  width:125rpx;
+  height:50rpx;
+  /* background-color: pink; */
+}
+
+.good_content  .price {
+  font-size: 36rpx;
+  color: #70c0bb;
+  margin-top: 10rpx;
+  margin-left: 10%;
+  float: left;
+}
+.good_content  .stepper {
+  float:right;
+  margin-top:40rpx;
+  margin-right:0px;
+  width:100rpx;
+  height:40rpx;
+  /* background-color:red; */
+  font-size: 30rpx;
+  line-height: 40rpx;
+}
+.good_content  .stepper p{
+  color:#000;
+  font-size:30rpx;
+  float:left;
+  margin-top:2%;
+}
+.count{
+  float: left;
+  margin-top: 3%;
+  font-size: 30rpx;
+  margin-left: 8%;
+}
+
+
+
+
+
+.icon{
+  margin-left:10rpx;
+  clear:both;
+  content:"";
+  display:block;
+}
+
+
+
+
+
+
+
+
+
 .peisong-way{
     width: 100%;
     background-color: #fff;
     margin-bottom: 20rpx;
 }
+
+.peisong-way .row-box1{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 24rpx 0 24rpx 30rpx;
+    border-bottom: 1rpx solid #eee;
+    border-top: 20rpx solid #F2f2f2;
+}
+.goods-info .row-box1{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 24rpx 30rpx 12rpx 30rpx;
+    font-size: 28rpx;
+    color: #000;
+}
+.goods-info .row-box1 .right-text{
+    text-align: right;
+}
+
+
+
 .peisong-way .row-box{
     width: 100%;
     display: flex;
@@ -186,6 +386,7 @@ form{
     padding: 0 30rpx 0 0;
     font-size:28rpx;
     box-sizing: border-box;
+    background-color: white;
 }
 
 .jiesuan-box .total{

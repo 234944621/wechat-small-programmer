@@ -1,22 +1,32 @@
 // pages/jinbi/jinbi.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    'goodList': [
-      {
-        'sum': '0'
-      }
-    ]
+    'goodList': []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const db = wx.cloud.database({
+      env: 'shiguangshucheng-9845f6'
+    });
+    console.log(app.globalData.openid)
+    const xl = db.collection('user');
+    xl.where({ _openid: app.globalData.openid }).get().then(
+      res => {
+        // res.data 包含该记录的数据
+        console.log(res.data)
+        this.setData({
+          goodList: res.data
+        });
+        console.log(this.data.goodList)
+      });
   },
 
   /**

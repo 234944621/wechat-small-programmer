@@ -2,9 +2,10 @@
   "cloud": true,
   "pages": [
     "pages/index/index",
-    "pages/mainfenlei/mainfenlei",
-    "pages/fenlei/fenlei",
     "pages/ddemo/ddemo",
+    "pages/mainfenlei/mainfenlei",
+    "pages/want/want",
+    "pages/fenlei/fenlei",
     "pages/flower/flower",
     "pages/gouwuche/gouwuche",
     "pages/jiesuan/jiesuan",
@@ -19,7 +20,7 @@
     "pages/pingjia/pingjia",
     "pages/jinbi/jinbi",
     "pages/result/result",
-    "pages/want/want",
+    
     "pages/fukuansuccess/fukuansuccess"
   ],
   "window": {

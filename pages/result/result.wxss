@@ -1,1 +1,32 @@
 /* pages/result/result.wxss */
+.cartList {  
+  padding: 100px 0 0 0;  
+  display: flex;  
+  justify-content: center;  
+  flex-direction: column;  
+  align-items: center;  
+  color: #999;  
+}  
+  
+.cartList image {  
+  width: 100px;  
+  height: 100px;  
+  margin-bottom: 20px;  
+} 
+.null-small{
+  width:30%;
+  height: 80rpx;
+  margin:30rpx auto;
+  background-color: rgb(73, 187, 177);
+  border-radius: 40rpx;
+}
+.null-small p{
+  color: #fff;
+  text-align: center;
+  font-size: 35rpx;
+  letter-spacing: 3rpx;
+  line-height: 80rpx;
+  clear: both;
+  display: block;
+  content: "";
+}

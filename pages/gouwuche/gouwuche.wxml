@@ -13,7 +13,7 @@
                 </view>
               </view>
               <!-- 第二个盒子 -->
-              <view class='good_content' bindtap='jumpPage15'>
+              <view class='good_content'>
                   <view class='good_checkbox'>
                     <label class="checkbox">
                       <checkbox value="{{good._id}}" checked="{{good.checked}}" hidden='hidden' />
@@ -21,6 +21,7 @@
                       <icon type="success" size="23" wx:if="{{good.checked}}" class='icon'></icon>
                     </label>
                   </view>
+                  <view bindtap='jumpPage15'>
                     <view class='good_img'>
                       <image class='cover' src='{{good.img}}'></image>
                     </view>
@@ -35,6 +36,7 @@
                         <view class='add' data-index="{{index}}" catchtap='addtap'>+</view>
                       </view> 
                     </view>
+                  </view>
               </view>
           </view>
         </checkbox-group>

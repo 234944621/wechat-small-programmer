@@ -4,6 +4,7 @@ const app = getApp()
 
 Page({
   data: {
+    setInter:'',
     text: [
       "成大事不在于力量的大小，而在于能坚持多久。",
       "顽强的毅力可以征服世界上任何一座高峰。",
@@ -27,17 +28,7 @@ Page({
       url: '../flower/flower',
     })
   },
-  
-  onLoad: function (options) {
-    var arr = this.data.text;
-    var id = parseInt(Math.random() * arr.length);
-    var arr1 = this.data.text1;
-
-    this.setData({
-      text: arr[id],
-      text1: arr1[id]
-
-    });
+  onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -64,6 +55,24 @@ Page({
         }
       })
     }
+    this.getUserInfo();
+  },
+  getUserInfo: function (e) {
+    var setInter = setInterval(
+      function () {
+        clearInterval(setInter )
+        wx.reLaunch({
+          url: '../flower/flower',
+        })
+      }
+      , 4000);
+    console.log(e)
+    app.globalData.userInfo = e.detail.userInfo
+    this.setData({
+      userInfo: e.detail.userInfo,
+      hasUserInfo: true,
+      srtInnter: setInter
+    })
     var openid;
     let that = this;
     const db = wx.cloud.database();
@@ -71,6 +80,7 @@ Page({
       name: 'getOpenid',
       complete: res => {
         console.log('云函数获取到的openid: ', res.result.openId)
+        app.globalData.openid = res.result.openId
         openid = res.result.openId;
         that.setData({
           openid: openid
@@ -78,13 +88,13 @@ Page({
         db.collection("user").where({ _openid: openid }).get({
           success: function (res) {
             if (res.data == '') {
-              console.log("res.userInfo.name")
               db.collection('user').add({
                 data: {
                   // user:' getOpenid'
                   // age:"18"
-                  name: res.userInfo.nickName,
-                  url: res.userInfo.avatarUrl
+                  name: e.detail.userInfo.nickName,
+                  url: e.detail.userInfo.avatarUrl,
+                  gold: 0
                 },
                 success: res => {
                   // console.log(openid);
@@ -92,22 +102,29 @@ Page({
                 }
               })
             } else {
-              that.setData({
-                userInfo: res.data[0],
-              })  
+              console.log(res.data);
             }
           }
         })
       }
     })
-    var setInter = setInterval(
-      function () {
-        clearInterval(setInter)
-        wx.reLaunch({
-          url: '../flower/flower',
-        })
-      }
-      , 6000);
+  },
+  onLoad: function (options) {
+    console.log(1);
+    var arr = this.data.text;
+    var id = parseInt(Math.random() * arr.length);
+    var arr1 = this.data.text1;
+    console.log(id);
+    console.log(arr[id]);
+    this.setData({
+      text: arr[id],
+      text1: arr1[id]
+
+    });
+    // this.getOpenid();
+  },
+  onUnload() {
+    clearInterval(this.data.setInter);
   }
 
 })

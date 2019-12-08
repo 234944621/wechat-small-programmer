@@ -146,14 +146,29 @@ Page({
       url: '/pages/fenlei/fenlei?cid=4',
     })
   },
- book1: function () {
+ book1: function (e) {
     wx.navigateTo({
-      url: '/pages/mainxiangqing/mainxiangqing',
+      url: '/pages/mainxiangqing/mainxiangqing?id=' + e.currentTarget.id,
     })
   },
-  book2: function () {
+  book2: function (e) {
     wx.navigateTo({
-      url: '/pages/mainxiangqing/mainxiangqing',
+      url: '/pages/mainxiangqing/mainxiangqing?id=' + e.currentTarget.id,
+    })
+  },
+  book3: function (e) {
+    wx.navigateTo({
+      url: '/pages/mainxiangqing/mainxiangqing?id=' + e.currentTarget.id,
+    })
+  },
+  book4: function (e) {
+    wx.navigateTo({
+      url: '/pages/mainxiangqing/mainxiangqing?id=' + e.currentTarget.id,
+    })
+  },
+  book5: function (e) {
+    wx.navigateTo({
+      url: '/pages/mainxiangqing/mainxiangqing?id=' + e.currentTarget.id,
     })
   },
     collected: function (e) {

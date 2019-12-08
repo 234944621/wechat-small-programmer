@@ -68,6 +68,9 @@ App({
     userInfo: null
   },
   globalData: {
+    openid: null
+  },
+  globalData: {
     e: null
   },
   onLaunch: function () {

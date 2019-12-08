@@ -10,7 +10,7 @@
               <view class="box1" >
                 <view class="card_info">
                    <blockquote class="card_info_mes_title">
-                    <image class='cover' src='{{item.img}}' style="height:370rpx; width:280rpx;"></image>
+                    <image class='cover' src='{{item.img}}' style="height:370rpx; width:280rpx; border-radius:20rpx;"></image>
                   </blockquote>
                   <view class='top-right'>
                     <view class='top-right-top'>

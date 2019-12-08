@@ -9,7 +9,7 @@ Page({
     'iscart': false, //控制购物车有没有数据
     'goodlist': [],
     'checkAll': false,
-    'clecte': [],
+    'shoucang': [],
     'totalCount': 0,
     'totalPrice': 0,
   },
@@ -18,20 +18,30 @@ Page({
 
   //删除
   deleteList(e) {
-    console.log(e.currentTarget.id)
+    console.log(e.currentTarget.id);
+    console.log(234456)
+    console.log(this.data.goodlist)
+    console.log(e)
     const index = e.currentTarget.dataset.index;
     let goodList = this.data.goodlist;
-    goodList.splice(index, 1);
+    for(var i=0;i<this.data.goodlist.length;i++){
+      if (this.data.goodlist[i]["_id"] == e.currentTarget.id){
+        console.log(9999)
+        goodList.splice(i, 1);
+        wx.removeStorageSync('shoucang')
+      }
+    }
+    // goodList.splice(index, 1);
     this.setData({
       goodlist: goodList
     });
-    if (!goodList.length) {
-      this.setData({
-        iscart: true
-      });
-    } else {
-      this.calculateTotal();
-    }
+    // if (goodList.length==0) {
+    //   this.setData({
+    //     iscart: true
+    //   });
+    // } else {
+    //   this.calculateTotal();
+    // }
     const db = wx.cloud.database({
       env: 'shiguangshucheng-9845f6'
     });
@@ -129,7 +139,8 @@ Page({
   },
   onLoad: function (options) {
     var array = [];
-    var clecte = this.data.clecte;
+    var shoucang = this.data.shoucang;
+    shoucang = [];
     if (app.globalData.openid) {
       this.setData({
         openid: app.globalData.openid
@@ -149,8 +160,8 @@ Page({
             _id: res.data[i].bid
           }).get({
             success: res => {
-              clecte.push(res.data[0])
-              wx.setStorageSync('clecte', clecte)
+              shoucang.push(res.data[0])
+              wx.setStorageSync('shoucang', shoucang)
             },
             fail: err => {
               wx.showToast({
@@ -161,12 +172,13 @@ Page({
             }
           })
         }
-        array = wx.getStorageSync('clecte')//获得缓存
+        array = wx.getStorageSync('shoucang')//获得缓存
         console.log(array)
         this.setData({
           goodlist: array
         })
         // console.log(this.data.goodlist)
+        // wx.removeStorageSync('shoucang')
       },
       fail: err => {
         wx.showToast({
@@ -177,7 +189,7 @@ Page({
       }
     })
   },
-
-
-  
+  onShow:function(){
+    this.onLoad();
+  },
 })

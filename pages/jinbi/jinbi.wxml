@@ -1,16 +1,16 @@
 <!--pages/jinbi/jinbi.wxml-->
 <view class='contain'>
    <view class='top'>
-         <h1  wx:for='{{goodList}}' wx:for-item="good" wx:key="good.name">{{good.sum}}</h1>
+         <h1  wx:for='{{goodList}}' wx:for-item="good" wx:key="good.name">{{good.gold}}</h1>
          <p>当前总金币</p>
    </view>
    <view class='main'>
         <h1>金币获取与使用规则</h1>
          <image src='https://7368-shiguangshucheng-9845f6-1259049166.tcb.qcloud.la/问号(1).png' class='photo1'></image>
          <p class="p1">1. 金币获取规则</p>
-         <span>通过专注即可获得金币，专注时间越长，获得金币越多。连续专注10分钟即可获得5个金币，连续专注20分钟可获得15个金币，连续专注30分钟可获得25个金币，连续专注40分钟可获得35个金币，连续专注50分钟可获得45个金币，连续专注60分钟可获得60个金币。</span>
+         <span>通过专注即可获得金币，专注时间越长，获得金币越多。连续专注10分钟即可获得10个金币，连续专注20分钟可获得25个金币，连续专注30分钟可获得40个金币，连续专注40分钟可获得55个金币，连续专注50分钟可获得70个金币，连续专注60分钟可获得85个金币，连续专注70分钟可获得100个金币，连续专注80分钟可获得115个金币，连续专注90分钟可获得130个金币，</span>
          <p class="p1">2. 金币使用规则</p>
-          <span>通过专注获取的金币可在购买书的时候抵用，100个金币可以抵用2元钱。</span>
+          <span>通过专注获取的金币可在购买书的时候抵用，200个金币可以抵用1元钱。一次最多可用2000金币</span>
    </view>
 </view>
 
